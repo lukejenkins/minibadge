@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="7.5.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="yes"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="yes" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="yes" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="yes" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="7" fill="1" visible="no" active="no"/>
+<layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
+<layer number="101" name="Patch_Top" color="12" fill="4" visible="yes" active="yes"/>
+<layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="103" name="tMap" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="104" name="Name" color="16" fill="1" visible="yes" active="yes"/>
+<layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="108" name="tplace-old" color="10" fill="1" visible="yes" active="yes"/>
+<layer number="109" name="ref-old" color="11" fill="1" visible="yes" active="yes"/>
+<layer number="110" name="fp0" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="113" name="IDFDebug" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="124" name="bTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="126" name="_bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="153" name="FabDoc1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="202" name="202bmp" color="3" fill="10" visible="yes" active="yes"/>
+<layer number="203" name="203bmp" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="204" name="204bmp" color="5" fill="10" visible="yes" active="yes"/>
+<layer number="205" name="205bmp" color="6" fill="10" visible="yes" active="yes"/>
+<layer number="206" name="206bmp" color="7" fill="10" visible="yes" active="yes"/>
+<layer number="207" name="207bmp" color="8" fill="10" visible="yes" active="yes"/>
+<layer number="208" name="208bmp" color="9" fill="10" visible="yes" active="yes"/>
+<layer number="209" name="209bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="210" name="210bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="211" name="211bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="212" name="212bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="213" name="213bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="214" name="214bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="215" name="215bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="216" name="216bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
+<layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
+<layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
+<layer number="220" name="220bmp" color="21" fill="1" visible="no" active="no"/>
+<layer number="221" name="221bmp" color="22" fill="1" visible="no" active="no"/>
+<layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
+<layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
+<layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
+<layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
+<layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<description>&lt;h3&gt;MiniBadge Library&lt;/h3&gt;
+&lt;h4&gt;By Luke Jenkins&lt;/h4&gt;
+Version 1.0
+&lt;br&gt;&lt;br&gt;
+This library is provided as is. Use at your own risk.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
+&lt;br&gt;&lt;br&gt;
+SMD Header layout from Sparkfun, who make this request:&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="BADGE64-FOOTPRINT">
+<pad name="NC-P9" x="0" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P10" x="2.54" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P11" x="5.08" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P12" x="7.62" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SCL" x="10.16" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SDA" x="12.7" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+3V3-P15" x="15.24" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="GND-P16" x="17.78" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+5V" x="0" y="0" drill="1.016" diameter="1.778" shape="square" first="yes"/>
+<pad name="GND-P2" x="2.54" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="MISO" x="5.08" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SCK" x="7.62" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="MOSI" x="10.16" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="CS" x="12.7" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+3V3-P7" x="15.24" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="GND-P8" x="17.78" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<wire x1="-1.27" y1="-19.05" x2="-1.27" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="1.27" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="1.27" x2="1.27" y2="1.27" width="0.127" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="19.05" y2="1.27" width="0.127" layer="21"/>
+<wire x1="19.05" y1="1.27" x2="19.05" y2="-19.05" width="0.127" layer="21"/>
+<wire x1="19.05" y1="-19.05" x2="-1.27" y2="-19.05" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-1.27" x2="1.27" y2="1.27" width="0.127" layer="21"/>
+<text x="0.635" y="1.905" size="1.27" layer="51" rot="R90">+5V</text>
+<text x="17.145" y="-19.685" size="1.27" layer="51" rot="R270">GND</text>
+<text x="14.605" y="-19.685" size="1.27" layer="51" rot="R270">+3V3</text>
+<text x="9.525" y="-19.685" size="1.27" layer="51" rot="R270">SCL</text>
+<text x="12.065" y="-19.685" size="1.27" layer="51" rot="R270">SDA</text>
+<text x="18.415" y="1.905" size="1.27" layer="51" rot="R90">GND</text>
+<text x="15.875" y="1.905" size="1.27" layer="51" rot="R90">+3V3</text>
+<text x="3.175" y="1.905" size="1.27" layer="51" rot="R90">GND</text>
+<text x="13.335" y="1.905" size="1.27" layer="51" rot="R90">CS</text>
+<text x="10.795" y="1.905" size="1.27" layer="51" rot="R90">MOSI</text>
+<text x="8.255" y="1.905" size="1.27" layer="51" rot="R90">SCK</text>
+<text x="5.715" y="1.905" size="1.27" layer="51" rot="R90">MISO</text>
+<text x="6.985" y="-19.685" size="1.27" layer="51" rot="R270">N/C</text>
+<text x="4.445" y="-19.685" size="1.27" layer="51" rot="R270">N/C</text>
+<text x="1.905" y="-19.685" size="1.27" layer="51" rot="R270">N/C</text>
+<text x="-0.635" y="-19.685" size="1.27" layer="51" rot="R270">N/C</text>
+</package>
+<package name="BADGE64-MINIBADGE">
+<pad name="NC-P9" x="1.27" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P10" x="3.81" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P11" x="6.35" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P12" x="8.89" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SCL" x="11.43" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SDA" x="13.97" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+3V3-P15" x="16.51" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="GND-P16" x="19.05" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+5V" x="1.27" y="19.05" drill="1.016" diameter="1.778" shape="square" first="yes"/>
+<pad name="GND-P2" x="3.81" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="MISO" x="6.35" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SCK" x="8.89" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="MOSI" x="11.43" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="CS" x="13.97" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+3V3-P7" x="16.51" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="GND-P8" x="19.05" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<wire x1="0" y1="0" x2="0" y2="17.78" width="0.127" layer="21"/>
+<wire x1="0" y1="17.78" x2="0" y2="20.32" width="0.127" layer="21"/>
+<wire x1="0" y1="20.32" x2="2.54" y2="20.32" width="0.127" layer="21"/>
+<wire x1="2.54" y1="20.32" x2="20.32" y2="20.32" width="0.127" layer="21"/>
+<wire x1="20.32" y1="20.32" x2="20.32" y2="0" width="0.127" layer="21"/>
+<wire x1="20.32" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="17.78" x2="2.54" y2="17.78" width="0.127" layer="21"/>
+<wire x1="2.54" y1="17.78" x2="2.54" y2="20.32" width="0.127" layer="21"/>
+<text x="1.905" y="20.955" size="1.27" layer="51" rot="R90">+5V</text>
+<text x="18.415" y="-0.635" size="1.27" layer="51" rot="R270">GND</text>
+<text x="15.875" y="-0.635" size="1.27" layer="51" rot="R270">+3V3</text>
+<text x="10.795" y="-0.635" size="1.27" layer="51" rot="R270">SCL</text>
+<text x="13.335" y="-0.635" size="1.27" layer="51" rot="R270">SDA</text>
+<text x="19.685" y="20.955" size="1.27" layer="51" rot="R90">GND</text>
+<text x="17.145" y="20.955" size="1.27" layer="51" rot="R90">+3V3</text>
+<text x="4.445" y="20.955" size="1.27" layer="51" rot="R90">GND</text>
+<text x="14.605" y="20.955" size="1.27" layer="51" rot="R90">CS</text>
+<text x="12.065" y="20.955" size="1.27" layer="51" rot="R90">MOSI</text>
+<text x="9.525" y="20.955" size="1.27" layer="51" rot="R90">SCK</text>
+<text x="6.985" y="20.955" size="1.27" layer="51" rot="R90">MISO</text>
+<text x="8.255" y="-0.635" size="1.27" layer="51" rot="R270">N/C</text>
+<text x="5.715" y="-0.635" size="1.27" layer="51" rot="R270">N/C</text>
+<text x="3.175" y="-0.635" size="1.27" layer="51" rot="R270">N/C</text>
+<text x="0.635" y="-0.635" size="1.27" layer="51" rot="R270">N/C</text>
+<wire x1="0" y1="0" x2="0" y2="20.32" width="0.127" layer="20"/>
+<wire x1="0" y1="20.32" x2="20.32" y2="20.32" width="0.127" layer="20"/>
+<wire x1="20.32" y1="20.32" x2="20.32" y2="0" width="0.127" layer="20"/>
+<wire x1="20.32" y1="0" x2="0" y2="0" width="0.127" layer="20"/>
+<dimension x1="0" y1="0" x2="20.32" y2="0" x3="10.16" y3="-6.35" textsize="1.27" layer="47" unit="inch" visible="yes"/>
+<dimension x1="0" y1="0" x2="0" y2="20.32" x3="-6.35" y3="10.16" textsize="1.27" layer="47" unit="inch" visible="yes"/>
+</package>
+<package name="BADGE64-FOOTPRINT-SHINY">
+<pad name="NC-P9" x="0" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P10" x="2.54" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P11" x="5.08" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="NC-P12" x="7.62" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SCL" x="10.16" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SDA" x="12.7" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+3V3-P15" x="15.24" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="GND-P16" x="17.78" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+5V" x="0" y="0" drill="1.016" diameter="1.778" shape="square" first="yes"/>
+<pad name="GND-P2" x="2.54" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="MISO" x="5.08" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="SCK" x="7.62" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="MOSI" x="10.16" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="CS" x="12.7" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="+3V3-P7" x="15.24" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="GND-P8" x="17.78" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<wire x1="-1.27" y1="-19.05" x2="-1.27" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="1.27" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="1.27" x2="1.27" y2="1.27" width="0.127" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="19.05" y2="1.27" width="0.127" layer="21"/>
+<wire x1="19.05" y1="1.27" x2="19.05" y2="-19.05" width="0.127" layer="21"/>
+<wire x1="19.05" y1="-19.05" x2="-1.27" y2="-19.05" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-1.27" x2="1.27" y2="1.27" width="0.127" layer="21"/>
+<text x="-0.635" y="-1.905" size="1.27" layer="51" rot="R270">+5V</text>
+<text x="18.415" y="-15.875" size="1.27" layer="51" rot="R90">GND</text>
+<text x="15.875" y="-15.875" size="1.27" layer="51" rot="R90">+3V3</text>
+<text x="10.795" y="-15.875" size="1.27" layer="51" rot="R90">SCL</text>
+<text x="13.335" y="-15.875" size="1.27" layer="51" rot="R90">SDA</text>
+<text x="17.145" y="-1.905" size="1.27" layer="51" rot="R270">GND</text>
+<text x="14.605" y="-1.905" size="1.27" layer="51" rot="R270">+3V3</text>
+<text x="1.905" y="-1.905" size="1.27" layer="51" rot="R270">GND</text>
+<text x="12.065" y="-1.905" size="1.27" layer="51" rot="R270">CS</text>
+<text x="9.525" y="-1.905" size="1.27" layer="51" rot="R270">MOSI</text>
+<text x="6.985" y="-1.905" size="1.27" layer="51" rot="R270">SCK</text>
+<text x="4.445" y="-1.905" size="1.27" layer="51" rot="R270">MISO</text>
+<text x="8.255" y="-15.875" size="1.27" layer="51" rot="R90">N/C</text>
+<text x="5.715" y="-15.875" size="1.27" layer="51" rot="R90">N/C</text>
+<text x="3.175" y="-15.875" size="1.27" layer="51" rot="R90">N/C</text>
+<text x="0.635" y="-15.875" size="1.27" layer="51" rot="R90">N/C</text>
+<rectangle x1="-1.27" y1="-16.51" x2="19.05" y2="-1.27" layer="1"/>
+<rectangle x1="-1.27" y1="-16.51" x2="19.05" y2="-1.27" layer="29"/>
+<text x="-1.524" y="-1.27" size="1.016" layer="21" rot="R90">Pin1</text>
+</package>
+</packages>
+<symbols>
+<symbol name="BADGE64-SYMBOL">
+<description>Not all incarnations of the MiniBadge spec will implement all functions. For example, the 2017 SAINTCON badge will only have power, ground, and i2c connected to the Raspberry Pi. SPI will not be used. 
+&lt;br&gt;&lt;br&gt;
+N/C pads are reserved for future use. Leave them floating in your MiniBadge if you want to guarantee future compatibility. If you're willing to swap future compatibility for something awesome today (e.g. budge wires connecting extra pins to N/C pins on the MiniBadge), make sure you give good instructions to those building your minibadge.</description>
+<pin name="+5V" x="5.08" y="0" visible="pin" length="middle" direction="pwr" rot="R180"/>
+<pin name="GND" x="5.08" y="-30.48" visible="pin" length="middle" rot="R180"/>
+<pin name="MISO" x="5.08" y="-5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="SCK" x="5.08" y="-7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="MOSI" x="5.08" y="-10.16" visible="pin" length="middle" rot="R180"/>
+<pin name="CS" x="5.08" y="-12.7" visible="pin" length="middle" rot="R180"/>
+<pin name="+3V3" x="5.08" y="-2.54" visible="pin" length="middle" direction="pwr" rot="R180"/>
+<pin name="N/C-P9" x="5.08" y="-20.32" visible="pin" length="middle" direction="nc" rot="R180"/>
+<pin name="N/C-P10" x="5.08" y="-22.86" visible="pin" length="middle" direction="nc" rot="R180"/>
+<pin name="N/C-P11" x="5.08" y="-25.4" visible="pin" length="middle" direction="nc" rot="R180"/>
+<pin name="N/C-P12" x="5.08" y="-27.94" visible="pin" length="middle" direction="nc" rot="R180"/>
+<pin name="SCL" x="5.08" y="-15.24" visible="pin" length="middle" rot="R180"/>
+<pin name="SDA" x="5.08" y="-17.78" visible="pin" length="middle" rot="R180"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="-31.75" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-31.75" x2="-11.43" y2="-31.75" width="0.254" layer="94"/>
+<wire x1="-11.43" y1="-31.75" x2="-11.43" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-11.43" y1="1.27" x2="1.27" y2="1.27" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BADGE64">
+<gates>
+<gate name="G$1" symbol="BADGE64-SYMBOL" x="0" y="-10.16"/>
+</gates>
+<devices>
+<device name="FOOTPRINT" package="BADGE64-FOOTPRINT">
+<connects>
+<connect gate="G$1" pin="+3V3" pad="+3V3-P7 +3V3-P15"/>
+<connect gate="G$1" pin="+5V" pad="+5V"/>
+<connect gate="G$1" pin="CS" pad="CS"/>
+<connect gate="G$1" pin="GND" pad="GND-P2 GND-P8 GND-P16"/>
+<connect gate="G$1" pin="MISO" pad="MISO"/>
+<connect gate="G$1" pin="MOSI" pad="MOSI"/>
+<connect gate="G$1" pin="N/C-P10" pad="NC-P10"/>
+<connect gate="G$1" pin="N/C-P11" pad="NC-P11"/>
+<connect gate="G$1" pin="N/C-P12" pad="NC-P12"/>
+<connect gate="G$1" pin="N/C-P9" pad="NC-P9"/>
+<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="EXAMPLE" package="BADGE64-MINIBADGE">
+<connects>
+<connect gate="G$1" pin="+3V3" pad="+3V3-P7 +3V3-P15"/>
+<connect gate="G$1" pin="+5V" pad="+5V"/>
+<connect gate="G$1" pin="CS" pad="CS"/>
+<connect gate="G$1" pin="GND" pad="GND-P2 GND-P8 GND-P16"/>
+<connect gate="G$1" pin="MISO" pad="MISO"/>
+<connect gate="G$1" pin="MOSI" pad="MOSI"/>
+<connect gate="G$1" pin="N/C-P10" pad="NC-P10"/>
+<connect gate="G$1" pin="N/C-P11" pad="NC-P11"/>
+<connect gate="G$1" pin="N/C-P12" pad="NC-P12"/>
+<connect gate="G$1" pin="N/C-P9" pad="NC-P9"/>
+<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="FOOTPRINT-SHINY" package="BADGE64-FOOTPRINT-SHINY">
+<connects>
+<connect gate="G$1" pin="+3V3" pad="+3V3-P7 +3V3-P15"/>
+<connect gate="G$1" pin="+5V" pad="+5V"/>
+<connect gate="G$1" pin="CS" pad="CS"/>
+<connect gate="G$1" pin="GND" pad="GND-P2 GND-P8 GND-P16"/>
+<connect gate="G$1" pin="MISO" pad="MISO"/>
+<connect gate="G$1" pin="MOSI" pad="MOSI"/>
+<connect gate="G$1" pin="N/C-P10" pad="NC-P10"/>
+<connect gate="G$1" pin="N/C-P11" pad="NC-P11"/>
+<connect gate="G$1" pin="N/C-P12" pad="NC-P12"/>
+<connect gate="G$1" pin="N/C-P9" pad="NC-P9"/>
+<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
