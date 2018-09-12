@@ -1,8 +1,9 @@
 ### MiniBadge Library
 
 #### By Luke Jenkins
+##### UART Added by [Mike Julander](https://github.com/Sodium-Hydrogen)
 
-Version 1.0  
+Version 2.0  
 
 This library is provided as is. Use at your own risk.  
 
