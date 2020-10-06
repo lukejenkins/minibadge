@@ -32,12 +32,12 @@ for how to use I2C communication.
 __NOTE: I2C minibadges should act like a sequential read ROM. Communication will start and stop multiple times for each message so
 microcontrollers will need to keep track of the current state and what to send outside the event functions.__
 
-All communication between the badge and a minibadge will initiate communication by sending `0x00 0x00` to the minibadge.
+All communication between the badge and a minibadge will initiate communication by sending `0x00` followed by either `0x00`(for write)
+or `0x01` (for read) to the minibadge then read one byte.
 
 ##### Reading #####
-After Initiating communication the badge will then request two bytes from the minibadge. The first byte is only for writing and does not affect
-a read request. The Second byte should be one of the options listed below. Depending on the value of byte two the badge may make
-multiple read requests to get all needed information.
+During initiating communication the single read byte should be one of the options below. If the option requires more information,
+like the text (0x02), then there can be multiple reads (like text one to get message length then a new read to get the message.)
 
 * 0x00: Do nothing.
 * 0x01: Button Pressed. (The minibadge will need to clear this or the badge will continue to show button pressed.)
@@ -45,9 +45,9 @@ multiple read requests to get all needed information.
 
 Ex:
 ```
-[ 0bXXXXXXX1 0x00 0x00 ]  // Init Communication
-[ 0bXXXXXXX0 r r ]        // The two byte read. The second byte is the status byte
-[ 0bXXXXXXX0 r...]        // Any additional information needed by the badge. This may or may not start and stop reading multiple times.
+[ 0bXXXXXXX1 0x00 0x01 ]  // Init Communication.
+[ 0bXXXXXXX0 r ]          // The single byte read for choosing the read option.
+[ 0bXXXXXXX0 r...]        // Any additional information needed by the badge. This may or may not start and stop reading multiple times. Or it may not be used at all.
 ```
 * _[ = start of message_
 * _] = end of message_
@@ -55,20 +55,20 @@ Ex:
 * _0bXXXXXXX = 7-bit I2C address. A 1 following this is a write and a 0 is read._
 
 ##### Write #####
-After Initiating communication the badge will then request a single byte from the minibadge. This byte should be 0x01 indicate it
-supports write requests or 0x00 if it does not. If the minibadge responds with 0x01 then the badge will continue sending it's message
-as follows:
+During initiating communication the single byte sent should be a 1 to indicate support for write requests or 0 to
+indicate that the minibadge does not support writing. This will be followed by another single write with the message.
 
 * 0x01 Score Update. (Then two bytes with the score.)
 * 0x02 Brightness. (Then one more byte to set the brightness: 0x0 to 0x7F)
 
 Ex:
 ```
-[ 0bXXXXXXX1 0x00 0x00 ]    // Init Communication
+[ 0bXXXXXXX1 0x00 0x00 ]    // Init Communication.
 [ 0bXXXXXXX0 r ]            // The one byte read to check if the minibadge supports writing.
 [ 0bXXXXXXX1 0xXX 0xXX...]  // This will write the command followed by any necessary data. This will be a single write.
 ```
 
+_A more detailed explanation for each command can be found in [I2C Example Code](/I2C%20Example%20Code/README.md)._
 
 If you would like to use I2C for a minibadge there will be an official list of used addresses. If you would like to
 reserve an address open a pull request with the 7-bit address so it can be added.
@@ -91,6 +91,7 @@ Here are some optional guides:
 These pins are reserved for future use. Do not connect anything including themselves to them as this may cause damage to either
 minibadges, the host badge, or both.
 
+------
 
 This library is provided as is. Use at your own risk.  
 
