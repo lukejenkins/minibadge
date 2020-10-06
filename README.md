@@ -32,23 +32,42 @@ for how to use I2C communication.
 __NOTE: I2C minibadges should act like a sequential read ROM. Communication will start and stop multiple times for each message so
 microcontrollers will need to keep track of the current state and what to send outside the event functions.__
 
+All communication between the badge and a minibadge will initiate communication by sending `0x00 0x00` to the minibadge.
+
 ##### Reading #####
-I2C communication should work like a sequential read ROM. The badge will initiate communication with the minibadges and tell
-it to return to address by writing 0x00 0x00. This indicates the beginning of the read process. After this the badge will
-send a two bit read request the first byte is a bool and indicates if the minibadge will accept write commands and the second
-is as follows:
+After Initiating communication the badge will then request two bytes from the minibadge. The first byte is only for writing and does not affect
+a read request. The Second byte should be one of the options listed below. Depending on the value of byte two the badge may make
+multiple read requests to get all needed information.
 
 * 0x00: Do nothing.
-* 0x01: Button Pressed. (The minibadge will need to clear this.)
+* 0x01: Button Pressed. (The minibadge will need to clear this or the badge will continue to show button pressed.)
 * 0x02: Text. (The next byte is the length of the message Max value 0xFF followed by the ascii message.)
 
+Ex:
+```
+[ 0bXXXXXXX1 0x00 0x00 ]  // Init Communication
+[ 0bXXXXXXX0 r r ]        // The two byte read. The second byte is the status byte
+[ 0bXXXXXXX0 r...]        // Any additional information needed by the badge. This may or may not start and stop reading multiple times.
+```
+* _[ = start of message_
+* _] = end of message_
+* _r = one byte read request_
+* _0bXXXXXXX = 7-bit I2C address. A 1 following this is a write and a 0 is read._
+
 ##### Write #####
-When the badge wants to tell the minibadge something it will first initiate communication by writing 0x00 0x00 then reading one byte.
-If the byte is 0x01 it will proceed with writing and if it 0x00 it will end communication. Then if the minibadge supports writing the
-badge will send the instruction byte and any additional bytes as follows:
+After Initiating communication the badge will then request a single byte from the minibadge. This byte should be 0x01 indicate it
+supports write requests or 0x00 if it does not. If the minibadge responds with 0x01 then the badge will continue sending it's message
+as follows:
 
 * 0x01 Score Update. (Then two bytes with the score.)
 * 0x02 Brightness. (Then one more byte to set the brightness: 0x0 to 0x7F)
+
+Ex:
+```
+[ 0bXXXXXXX1 0x00 0x00 ]    // Init Communication
+[ 0bXXXXXXX0 r ]            // The one byte read to check if the minibadge supports writing.
+[ 0bXXXXXXX1 0xXX 0xXX...]  // This will write the command followed by any necessary data. This will be a single write.
+```
 
 
 If you would like to use I2C for a minibadge there will be an official list of used addresses. If you would like to
