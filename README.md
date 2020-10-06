@@ -68,7 +68,9 @@ Ex:
 [ 0bXXXXXXX1 0xXX 0xXX...]  // This will write the command followed by any necessary data. This will be a single write.
 ```
 
-_A more detailed explanation for each command can be found in [I2C Example Code](/I2C%20Example%20Code/README.md)._
+----
+
+__A more detailed explanation for each command can be found in [I2C Example Code](/I2C%20Example%20Code/README.md).__
 
 If you would like to use I2C for a minibadge there will be an official list of used addresses. If you would like to
 reserve an address open a pull request with the 7-bit address so it can be added.
