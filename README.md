@@ -6,7 +6,7 @@
 
 ## A New Minibadge Standard ##
 
-The Saincon Badge Team presents the new minibadge spec.
+The Saintcon Badge Team presents the new minibadge spec.
 
 Changes:
 - Added the CLK pin.
