@@ -33,12 +33,22 @@
 // If you would like to let the main badge write the minibadge this should be 1.
 // Otherwise to disable write support set write_support to 0.
 uint8_t write_support = 1;
+//Write Actions
+//  1 is a score update
+#define SCORE 1
+//  2 is a brightness update
+#define BRIGHTNESS 2
+
 
 // read_action is used for telling the read interupt what to respond with.
 //  0 is do nothing.
+#define NOP 0
 //  1 is button press.
+#define BUTTON 1
 //  2 is text message. If you use this then you must also set message_length and message.
-uint8_t read_action = 2;
+#define TEXT 2
+
+uint8_t read_action = TEXT;
 
 // This is the length of the text message the badge will send if read_action is set to 2.
 // The max length is 255. Anything larger and it cannot be sent in one byte and will
@@ -80,7 +90,7 @@ void request(){
 
     // If it is 2 for a text message let this function know next read event will need to send the
     // message length by setting reading_state to ReadPartTwo.
-    if(read_action == 2){
+    if(read_action == TEXT){
       reading_state = ReadPartTwo;
 
     // If read_action is anything else then set reading_state to DoNothing to indicate the minibadge
@@ -92,7 +102,7 @@ void request(){
     // It is a good idea to set the read_action to zero after any value is read.
     // This will prevent the minibadge from "spamming" its message if the main badge
     // is not checking for that.
-    read_action = 0;
+    read_action = NOP;
 
   // If reading_state is ReadPartTwo then the minibadge should respond with the text message length and
   // advance reading_state to ReadPartThree to let the minibadge know next read should be the text message.
@@ -130,14 +140,14 @@ void recieve(int byteCount){
   // and the minibadge will only continue reading if write_support is enabled.
   }else if(write_support == 1){
 
-    // 0x01 is a score update. The score is two bytes long and in big endian
+    // This is a score update. The score is two bytes long and in big endian
     // ex. if the sent score is 0x02 0xFF then the value saved to score would be
     //  0x02FF or 767.
-    if(byteOne == 0x01){
+    if(byteOne == SCORE){
       score = (((uint32_t)Wire.read()) << 8) + (uint32_t)Wire.read();
 
-    // 0x02 is for a brightness update. The brightness range should be 0-127.
-    }else if(byteOne == 0x02){
+    // This is for a brightness update. The brightness range should be 0-127.
+    }else if(byteOne == BRIGHTNESS){
       brightness = Wire.read();
     }
   }
