@@ -67,12 +67,12 @@ volatile uint8_t brightness = 100;
 //--------Read Event--------------------------------
 void request(){
 
-  // If the badge is writing then reading_state will be 0 from the recieve function.
+  // If the badge is writing then reading_state will be RespondWrite from the recieve function.
   // This tells the badge wether this minibadge supports write events.
   if(reading_state == RespondWrite){
     Wire.write(write_support);
 
-  // If reading_state is set to 1 then the badge is beginning the read request.
+  // If reading_state is set to RespondRead then the badge is beginning the read request.
   }else if(reading_state == RespondRead ){
 
     // Send the read_action to the badge.
@@ -101,7 +101,7 @@ void request(){
     reading_state = ReadPartThree;
 
   // If reading_state is ReadPartThree then the minibadge should send the text message one byte at a time.
-  // Once it is done it should set reading_state to 4 to let the minibadge know to do nothing
+  // Once it is done it should set reading_state to ReadPartThree to let the minibadge know to do nothing
   // until the badge inits communication again.
   }else if(reading_state == ReadPartThree){
     for(uint8_t i = 0; i < message_length; i++){
