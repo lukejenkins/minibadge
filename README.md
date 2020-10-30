@@ -45,14 +45,14 @@ like the text (0x02), then there can be multiple reads (like text one to get mes
 
 Ex:
 ```
-[ 0bXXXXXXX1 0x00 0x01 ]  // Init Communication.
-[ 0bXXXXXXX0 r ]          // The single byte read for choosing the read option.
-[ 0bXXXXXXX0 r...]        // Any additional information needed by the badge. This may or may not start and stop reading multiple times. Or it may not be used at all.
+[ 0bXXXXXXX0 0x00 0x01 ]  // Init Communication.
+[ 0bXXXXXXX1 r ]          // The single byte read for choosing the read option.
+[ 0bXXXXXXX1 r...]        // Any additional information needed by the badge. This may or may not start and stop reading multiple times. Or it may not be used at all.
 ```
 * _[ = start of message_
 * _] = end of message_
 * _r = one byte read request_
-* _0bXXXXXXX = 7-bit I2C address. A 1 following this is a write and a 0 is read._
+* _0bXXXXXXX = 7-bit I2C address. A 0 following this is a write and a 1 is read._
 
 ##### Write #####
 During initiating communication the single byte sent should be a 1 to indicate support for write requests or 0 to
@@ -63,9 +63,9 @@ indicate that the minibadge does not support writing. This will be followed by a
 
 Ex:
 ```
-[ 0bXXXXXXX1 0x00 0x00 ]    // Init Communication.
-[ 0bXXXXXXX0 r ]            // The one byte read to check if the minibadge supports writing.
-[ 0bXXXXXXX1 0xXX 0xXX...]  // This will write the command followed by any necessary data. This will be a single write.
+[ 0bXXXXXXX0 0x00 0x00 ]    // Init Communication.
+[ 0bXXXXXXX1 r ]            // The one byte read to check if the minibadge supports writing.
+[ 0bXXXXXXX0 0xXX 0xXX...]  // This will write the command followed by any necessary data. This will be a single write.
 ```
 
 ----

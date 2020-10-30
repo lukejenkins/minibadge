@@ -57,7 +57,9 @@ char* message = "Hello World!";
 
 // Any variable being writen to inside an interupt Ie. request() or recieve() should be volatile.
 // These are default values and will change as the badge talks to the minibadge.
-volatile uint8_t reading_state = 0; // this should only be set to 0 or 1 in the recieve function.
+enum ReadStates { DoNothing, RespondWrite, RespondRead, ReadPartTwo, ReadPartThree };
+
+volatile ReadStates reading_state = DoNothing; // this should only be set to RespondWrite or RespondRead in the recieve function.
 volatile uint32_t score = 0;
 volatile uint8_t brightness = 100;
 
@@ -67,24 +69,24 @@ void request(){
 
   // If the badge is writing then reading_state will be 0 from the recieve function.
   // This tells the badge wether this minibadge supports write events.
-  if(reading_state == 0){
+  if(reading_state == RespondWrite){
     Wire.write(write_support);
 
   // If reading_state is set to 1 then the badge is beginning the read request.
-  }else if(reading_state == 1 ){
+  }else if(reading_state == RespondRead ){
 
     // Send the read_action to the badge.
     Wire.write(read_action);
 
     // If it is 2 for a text message let this function know next read event will need to send the
-    // message length by setting reading_state to 2.
+    // message length by setting reading_state to ReadPartTwo.
     if(read_action == 2){
-      reading_state = 2;
+      reading_state = ReadPartTwo;
 
-    // If read_action is anything else then set reading_state to 4 to indicate the minibadge
+    // If read_action is anything else then set reading_state to DoNothing to indicate the minibadge
     // should not respond with anything else till the next init sequence from the badge.
     }else{
-      reading_state = 4;
+      reading_state = DoNothing;
     }
 
     // It is a good idea to set the read_action to zero after any value is read.
@@ -92,20 +94,20 @@ void request(){
     // is not checking for that.
     read_action = 0;
 
-  // If reading_state is 2 then the minibadge should respond with the text message length and
-  // advance reading_state to 3 to let the minibadge know next read should be the text message.
-  }else if(reading_state == 2){
+  // If reading_state is ReadPartTwo then the minibadge should respond with the text message length and
+  // advance reading_state to ReadPartThree to let the minibadge know next read should be the text message.
+  }else if(reading_state == ReadPartTwo){
     Wire.write(message_length);
-    reading_state = 3;
+    reading_state = ReadPartThree;
 
-  // If reading_state is 3 then the minibadge should send the text message one byte at a time.
+  // If reading_state is ReadPartThree then the minibadge should send the text message one byte at a time.
   // Once it is done it should set reading_state to 4 to let the minibadge know to do nothing
   // until the badge inits communication again.
-  }else if(reading_state == 3){
+  }else if(reading_state == ReadPartThree){
     for(uint8_t i = 0; i < message_length; i++){
       Wire.write(message[i]);
     }
-    reading_state = 4;
+    reading_state = DoNothing;
   }
 }
 
@@ -114,15 +116,15 @@ void request(){
 // This is the write event. This function will be called whenever the main badge
 // writes to this minibadge.
 // byteCount will store the number of bytes sent in the write event.
-void recieve(uint8_t byteCount){
+void recieve(int byteCount){
   // This will read the first byte in the buffer into the byteOne variable.
   uint8_t byteOne = Wire.read();
 
   // If the first byte read is 0x00 then we know the minibadge initiation sequence was started.
   if(byteOne == 0x00){
-    // This reads the next byte and will let us know if the badge wants to read
-    // or write to the minibadge.
-    reading_state = Wire.read();
+    // This reads the next byte and will let us know if the badge wants to read (The byte is one)
+    // or write to the minibadge (The byte is zero).
+    reading_state = Wire.read() ? RespondRead: RespondWrite;
 
   // If the first byte is anythong other than 0x00 than there is a write event
   // and the minibadge will only continue reading if write_support is enabled.
