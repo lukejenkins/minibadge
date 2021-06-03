@@ -1,12 +1,10 @@
-# SAINTCON Minibadge
+# Minibadge
 
-### Version 2.0  
+### Version 1.1  
 
 <img src="minibadge-footprint.png" width=500px>
 
 ## A New Minibadge Standard ##
-
-The Saintcon Badge Team presents the new minibadge spec.
 
 Changes:
 - Added the CLK pin.
@@ -15,7 +13,7 @@ Changes:
 - Change +5V to +VBATT to more accurately reflect usage. This pin can be anywhere from +5v to +3.3v volts.
 
 ## +VBATT ##
-This pin can operate anywhere from +5v to +3.3v. You can use it if you want your LEDs to be a little brighter, __Make sure they can
+This pin can operate anywhere from __+5v to +3.3v__. You can use it if you want your LEDs to be a little brighter, __Make sure they can
 handle the current__. In recent years it has been at lipo battery voltage ~4v. There have been discussions to make it 3.3v, but to
 keep backwards compatibility with other badges we advise if you use it to allow it to run up to 5v.
 
