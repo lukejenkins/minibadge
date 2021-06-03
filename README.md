@@ -7,7 +7,7 @@
 * @compukidmike
 * @sodium-hydrogen
 
-### Version 1.1  
+### Version 2.0  
 
 <img src="minibadge-footprint.png" width=500px>
 
