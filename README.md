@@ -100,6 +100,9 @@ minibadges, the host badge, or both.
 
 ------
 
+#### Copyright & License
+Copyright, 2017-2021, Luke Jenkins
+
 Licensed under the <a href="./LICENSE">Apache License, Version 2.0</a> (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
