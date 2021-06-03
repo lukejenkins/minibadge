@@ -1,6 +1,11 @@
 # Minibadge Library
 
-#### By Luke Jenkins
+#### <a href="https://github.com/lukejenkins/minibadge/graphs/contributors">Contributors</a>:
+* @lukejenkins
+* @SparkFun - <a href="https://github.com/sparkfun/SparkFun-Eagle-Libraries">SMD Header layout</a>
+* @hamster
+* @compukidmike
+* @sodium-hydrogen
 
 ### Version 1.1  
 
@@ -95,9 +100,14 @@ minibadges, the host badge, or both.
 
 ------
 
-This library is provided as is. Use at your own risk.  
+Licensed under the <a href="./LICENSE">Apache License, Version 2.0</a> (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-**Licensing:** Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/  
+    http://www.apache.org/licenses/LICENSE-2.0
 
-SMD Header layout from Sparkfun, who make this request:  
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
