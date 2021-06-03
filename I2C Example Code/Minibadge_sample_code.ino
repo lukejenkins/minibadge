@@ -1,5 +1,5 @@
 //--------------------------------------------------
-//    SAINTCON MINIBADGE SAMPLE CODE
+//    MINIBADGE SAMPLE CODE
 //
 // This code is a helpful guide for setting up the minibadge
 //  to talk to the mainbadge following the minibadge 2.0 spec.

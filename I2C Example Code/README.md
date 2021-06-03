@@ -1,5 +1,5 @@
 # Minibadge Debugger #
-__Do not use an Arduino with 5v IO pins!! It may damage your minibadge!__
+## __Do not use an Arduino with 5v IO pins!! It may damage your minibadge!__ ##
 
 The debugger code can be interfaced with from the Arduino IDE or any terminal tool like
 putty or minicom. The BAUD rate is 9600.

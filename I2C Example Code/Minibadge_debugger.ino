@@ -2,8 +2,8 @@
 
 Author: Michael Julander ( @Sodium_Hydrogen, MikeJ.Tech )
 
-SAINTCON Minibadge Developer Environment.
-This tool emulates how the SAINTCON badge should communicate to a minibadge
+Minibadge Developer Environment.
+This tool emulates how the badge should communicate to a minibadge
 both I2C and the clock pin through a nice command line interface. The cli
 can be access by any serial monitor including the Arduino IDE's built in
 serial monitor. If you do not have access to that then an application
@@ -70,7 +70,7 @@ const char* const help[] PROGMEM = {
 void setup() {
   Wire.begin();
   Serial.begin(9600);
-  Serial.print(F("\n\rSAINTCON Minibadge Debugger \n\n\r$ "));
+  Serial.print(F("\n\rMinibadge Debugger \n\n\r$ "));
 
 }
 
@@ -466,7 +466,7 @@ void update_score(String com){
 
 // This prints the help message.
 void print_help(String com){
-  Serial.println(F("SAINTCON Minibadge Debugger \t(ADDR can be hex, binary, or decimal)"));
+  Serial.println(F("Minibadge Debugger \t(ADDR can be hex, binary, or decimal)"));
   for(uint8_t i = 0; i < (sizeof(command)/sizeof(char*)); i++){
     Serial.print("\t");
     Serial.print(command[i]);
