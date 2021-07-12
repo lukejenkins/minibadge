@@ -98,6 +98,25 @@ Here are some optional guides:
 These pins are reserved for future use. Do not connect anything including themselves to them as this may cause damage to either
 minibadges, the host badge, or both.
 
+### Minibadge Extender ###
+The extender port was introduced in 2019 for the SAINTCON Enigma badge.
+
+It is designed to move dedicated minibadge slots from the main badge to 
+extender boards. 
+
+Minibadge Specific pins:
+```
+MB_SDA, MB_SCL, and MB_CLK 
+```
+
+SDA and SCL are designed for having specific hardware that doesn't conform
+to the minibadge communication protocol, like the 2019 extender with it's 
+power toggle control chips.
+
+If a main badge does not have the necessary hardware to have two seperate
+I2C buses then the badge may combine them. __This can introduce addresses
+that minibadges can no longer use.__
+
 ------
 
 #### Copyright & License
