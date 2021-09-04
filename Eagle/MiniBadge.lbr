@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="9.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -131,7 +132,8 @@
 <library>
 <description>&lt;h3&gt;MiniBadge Library&lt;/h3&gt;
 &lt;h4&gt;By Luke Jenkins&lt;/h4&gt;
-Version 1.0
+&lt;h4&gt;Updated By Waylon Grange&lt;/h4&gt;
+Version 1.1
 &lt;br&gt;&lt;br&gt;
 This library is provided as is. Use at your own risk.
 &lt;br&gt;&lt;br&gt;
@@ -141,7 +143,7 @@ SMD Header layout from Sparkfun, who make this request:&lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
 <package name="BADGE64-FOOTPRINT">
-<pad name="NC-P9" x="0" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="CLK" x="0" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P10" x="2.54" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P11" x="5.08" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P12" x="7.62" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
@@ -151,10 +153,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pad name="GND-P16" x="17.78" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="+5V" x="0" y="0" drill="1.016" diameter="1.778" shape="square" first="yes"/>
 <pad name="GND-P2" x="2.54" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="MISO" x="5.08" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="SCK" x="7.62" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="MOSI" x="10.16" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="CS" x="12.7" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG1" x="5.08" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG2" x="7.62" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG3" x="10.16" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG4" x="12.7" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="+3V3-P7" x="15.24" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="GND-P8" x="17.78" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
 <wire x1="-1.27" y1="-19.05" x2="-1.27" y2="-1.27" width="0.127" layer="21"/>
@@ -165,7 +167,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="19.05" y1="-19.05" x2="-1.27" y2="-19.05" width="0.127" layer="21"/>
 <wire x1="-1.27" y1="-1.27" x2="1.27" y2="-1.27" width="0.127" layer="21"/>
 <wire x1="1.27" y1="-1.27" x2="1.27" y2="1.27" width="0.127" layer="21"/>
-<text x="0.635" y="1.905" size="1.27" layer="51" rot="R90">+5V</text>
+<text x="0.635" y="1.905" size="1.27" layer="51" rot="R90">VBATT</text>
 <text x="17.145" y="-19.685" size="1.27" layer="51" rot="R270">GND</text>
 <text x="14.605" y="-19.685" size="1.27" layer="51" rot="R270">+3V3</text>
 <text x="9.525" y="-19.685" size="1.27" layer="51" rot="R270">SCL</text>
@@ -173,17 +175,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="18.415" y="1.905" size="1.27" layer="51" rot="R90">GND</text>
 <text x="15.875" y="1.905" size="1.27" layer="51" rot="R90">+3V3</text>
 <text x="3.175" y="1.905" size="1.27" layer="51" rot="R90">GND</text>
-<text x="13.335" y="1.905" size="1.27" layer="51" rot="R90">CS</text>
-<text x="10.795" y="1.905" size="1.27" layer="51" rot="R90">MOSI</text>
-<text x="8.255" y="1.905" size="1.27" layer="51" rot="R90">SCK</text>
-<text x="5.715" y="1.905" size="1.27" layer="51" rot="R90">MISO</text>
+<text x="13.335" y="1.905" size="1.27" layer="51" rot="R90">PROG</text>
+<text x="10.795" y="1.905" size="1.27" layer="51" rot="R90">PROG</text>
+<text x="8.255" y="1.905" size="1.27" layer="51" rot="R90">PROG</text>
+<text x="5.715" y="1.905" size="1.27" layer="51" rot="R90">PROG</text>
 <text x="6.985" y="-19.685" size="1.27" layer="51" rot="R270">N/C</text>
 <text x="4.445" y="-19.685" size="1.27" layer="51" rot="R270">N/C</text>
 <text x="1.905" y="-19.685" size="1.27" layer="51" rot="R270">N/C</text>
-<text x="-0.635" y="-19.685" size="1.27" layer="51" rot="R270">N/C</text>
+<text x="-0.635" y="-19.685" size="1.27" layer="51" rot="R270">CLK</text>
 </package>
 <package name="BADGE64-MINIBADGE">
-<pad name="NC-P9" x="1.27" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="CLK" x="1.27" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P10" x="3.81" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P11" x="6.35" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P12" x="8.89" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
@@ -193,10 +195,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pad name="GND-P16" x="19.05" y="1.27" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="+5V" x="1.27" y="19.05" drill="1.016" diameter="1.778" shape="square" first="yes"/>
 <pad name="GND-P2" x="3.81" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="MISO" x="6.35" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="SCK" x="8.89" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="MOSI" x="11.43" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="CS" x="13.97" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG1" x="6.35" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG2" x="8.89" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG3" x="11.43" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG4" x="13.97" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="+3V3-P7" x="16.51" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="GND-P8" x="19.05" y="19.05" drill="1.016" diameter="1.778" shape="octagon"/>
 <wire x1="0" y1="0" x2="0" y2="17.78" width="0.127" layer="21"/>
@@ -207,7 +209,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="20.32" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
 <wire x1="0" y1="17.78" x2="2.54" y2="17.78" width="0.127" layer="21"/>
 <wire x1="2.54" y1="17.78" x2="2.54" y2="20.32" width="0.127" layer="21"/>
-<text x="1.905" y="20.955" size="1.27" layer="51" rot="R90">+5V</text>
+<text x="1.905" y="20.955" size="1.27" layer="51" rot="R90">VBATT</text>
 <text x="18.415" y="-0.635" size="1.27" layer="51" rot="R270">GND</text>
 <text x="15.875" y="-0.635" size="1.27" layer="51" rot="R270">+3V3</text>
 <text x="10.795" y="-0.635" size="1.27" layer="51" rot="R270">SCL</text>
@@ -215,14 +217,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="19.685" y="20.955" size="1.27" layer="51" rot="R90">GND</text>
 <text x="17.145" y="20.955" size="1.27" layer="51" rot="R90">+3V3</text>
 <text x="4.445" y="20.955" size="1.27" layer="51" rot="R90">GND</text>
-<text x="14.605" y="20.955" size="1.27" layer="51" rot="R90">CS</text>
-<text x="12.065" y="20.955" size="1.27" layer="51" rot="R90">MOSI</text>
-<text x="9.525" y="20.955" size="1.27" layer="51" rot="R90">SCK</text>
-<text x="6.985" y="20.955" size="1.27" layer="51" rot="R90">MISO</text>
+<text x="14.605" y="20.955" size="1.27" layer="51" rot="R90">PROG</text>
+<text x="12.065" y="20.955" size="1.27" layer="51" rot="R90">PROG</text>
+<text x="9.525" y="20.955" size="1.27" layer="51" rot="R90">PROG</text>
+<text x="6.985" y="20.955" size="1.27" layer="51" rot="R90">PROG</text>
 <text x="8.255" y="-0.635" size="1.27" layer="51" rot="R270">N/C</text>
 <text x="5.715" y="-0.635" size="1.27" layer="51" rot="R270">N/C</text>
 <text x="3.175" y="-0.635" size="1.27" layer="51" rot="R270">N/C</text>
-<text x="0.635" y="-0.635" size="1.27" layer="51" rot="R270">N/C</text>
+<text x="0.635" y="-0.635" size="1.27" layer="51" rot="R270">CLK</text>
 <wire x1="0" y1="0" x2="0" y2="20.32" width="0.127" layer="20"/>
 <wire x1="0" y1="20.32" x2="20.32" y2="20.32" width="0.127" layer="20"/>
 <wire x1="20.32" y1="20.32" x2="20.32" y2="0" width="0.127" layer="20"/>
@@ -231,7 +233,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <dimension x1="0" y1="0" x2="0" y2="20.32" x3="-6.35" y3="10.16" textsize="1.27" layer="47" unit="inch" visible="yes"/>
 </package>
 <package name="BADGE64-FOOTPRINT-SHINY">
-<pad name="NC-P9" x="0" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="CLK" x="0" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P10" x="2.54" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P11" x="5.08" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="NC-P12" x="7.62" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
@@ -241,10 +243,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pad name="GND-P16" x="17.78" y="-17.78" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="+5V" x="0" y="0" drill="1.016" diameter="1.778" shape="square" first="yes"/>
 <pad name="GND-P2" x="2.54" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="MISO" x="5.08" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="SCK" x="7.62" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="MOSI" x="10.16" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
-<pad name="CS" x="12.7" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG1" x="5.08" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG2" x="7.62" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG3" x="10.16" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
+<pad name="PROG4" x="12.7" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="+3V3-P7" x="15.24" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
 <pad name="GND-P8" x="17.78" y="0" drill="1.016" diameter="1.778" shape="octagon"/>
 <wire x1="-1.27" y1="-19.05" x2="-1.27" y2="-1.27" width="0.127" layer="21"/>
@@ -255,7 +257,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="19.05" y1="-19.05" x2="-1.27" y2="-19.05" width="0.127" layer="21"/>
 <wire x1="-1.27" y1="-1.27" x2="1.27" y2="-1.27" width="0.127" layer="21"/>
 <wire x1="1.27" y1="-1.27" x2="1.27" y2="1.27" width="0.127" layer="21"/>
-<text x="-0.635" y="-1.905" size="1.27" layer="51" rot="R270">+5V</text>
+<text x="-0.635" y="-1.905" size="1.27" layer="51" rot="R270">VBATT</text>
 <text x="18.415" y="-15.875" size="1.27" layer="51" rot="R90">GND</text>
 <text x="15.875" y="-15.875" size="1.27" layer="51" rot="R90">+3V3</text>
 <text x="10.795" y="-15.875" size="1.27" layer="51" rot="R90">SCL</text>
@@ -263,14 +265,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="17.145" y="-1.905" size="1.27" layer="51" rot="R270">GND</text>
 <text x="14.605" y="-1.905" size="1.27" layer="51" rot="R270">+3V3</text>
 <text x="1.905" y="-1.905" size="1.27" layer="51" rot="R270">GND</text>
-<text x="12.065" y="-1.905" size="1.27" layer="51" rot="R270">CS</text>
-<text x="9.525" y="-1.905" size="1.27" layer="51" rot="R270">MOSI</text>
-<text x="6.985" y="-1.905" size="1.27" layer="51" rot="R270">SCK</text>
-<text x="4.445" y="-1.905" size="1.27" layer="51" rot="R270">MISO</text>
+<text x="12.065" y="-1.905" size="1.27" layer="51" rot="R270">PROG</text>
+<text x="9.525" y="-1.905" size="1.27" layer="51" rot="R270">PROG</text>
+<text x="6.985" y="-1.905" size="1.27" layer="51" rot="R270">PROG</text>
+<text x="4.445" y="-1.905" size="1.27" layer="51" rot="R270">PROG</text>
 <text x="8.255" y="-15.875" size="1.27" layer="51" rot="R90">N/C</text>
 <text x="5.715" y="-15.875" size="1.27" layer="51" rot="R90">N/C</text>
 <text x="3.175" y="-15.875" size="1.27" layer="51" rot="R90">N/C</text>
-<text x="0.635" y="-15.875" size="1.27" layer="51" rot="R90">N/C</text>
+<text x="0.635" y="-15.875" size="1.27" layer="51" rot="R90">CLK</text>
 <rectangle x1="-1.27" y1="-16.51" x2="19.05" y2="-1.27" layer="1"/>
 <rectangle x1="-1.27" y1="-16.51" x2="19.05" y2="-1.27" layer="29"/>
 <text x="-1.524" y="-1.27" size="1.016" layer="21" rot="R90">Pin1</text>
@@ -281,14 +283,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <description>Not all incarnations of the MiniBadge spec will implement all functions. For example, the 2017 SAINTCON badge will only have power, ground, and i2c connected to the Raspberry Pi. SPI will not be used. 
 &lt;br&gt;&lt;br&gt;
 N/C pads are reserved for future use. Leave them floating in your MiniBadge if you want to guarantee future compatibility. If you're willing to swap future compatibility for something awesome today (e.g. budge wires connecting extra pins to N/C pins on the MiniBadge), make sure you give good instructions to those building your minibadge.</description>
-<pin name="+5V" x="5.08" y="0" visible="pin" length="middle" direction="pwr" rot="R180"/>
+<pin name="VBATT" x="5.08" y="0" visible="pin" length="middle" direction="pwr" rot="R180"/>
 <pin name="GND" x="5.08" y="-30.48" visible="pin" length="middle" rot="R180"/>
-<pin name="MISO" x="5.08" y="-5.08" visible="pin" length="middle" rot="R180"/>
-<pin name="SCK" x="5.08" y="-7.62" visible="pin" length="middle" rot="R180"/>
-<pin name="MOSI" x="5.08" y="-10.16" visible="pin" length="middle" rot="R180"/>
-<pin name="CS" x="5.08" y="-12.7" visible="pin" length="middle" rot="R180"/>
+<pin name="PROG1" x="5.08" y="-5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="PROG2" x="5.08" y="-7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="PROG3" x="5.08" y="-10.16" visible="pin" length="middle" rot="R180"/>
+<pin name="PROG4" x="5.08" y="-12.7" visible="pin" length="middle" rot="R180"/>
 <pin name="+3V3" x="5.08" y="-2.54" visible="pin" length="middle" direction="pwr" rot="R180"/>
-<pin name="N/C-P9" x="5.08" y="-20.32" visible="pin" length="middle" direction="nc" rot="R180"/>
+<pin name="CLK" x="5.08" y="-20.32" visible="pin" length="middle" direction="in" rot="R180"/>
 <pin name="N/C-P10" x="5.08" y="-22.86" visible="pin" length="middle" direction="nc" rot="R180"/>
 <pin name="N/C-P11" x="5.08" y="-25.4" visible="pin" length="middle" direction="nc" rot="R180"/>
 <pin name="N/C-P12" x="5.08" y="-27.94" visible="pin" length="middle" direction="nc" rot="R180"/>
@@ -309,18 +311,18 @@ N/C pads are reserved for future use. Leave them floating in your MiniBadge if y
 <device name="FOOTPRINT" package="BADGE64-FOOTPRINT">
 <connects>
 <connect gate="G$1" pin="+3V3" pad="+3V3-P7 +3V3-P15"/>
-<connect gate="G$1" pin="+5V" pad="+5V"/>
-<connect gate="G$1" pin="CS" pad="CS"/>
+<connect gate="G$1" pin="CLK" pad="CLK"/>
 <connect gate="G$1" pin="GND" pad="GND-P2 GND-P8 GND-P16"/>
-<connect gate="G$1" pin="MISO" pad="MISO"/>
-<connect gate="G$1" pin="MOSI" pad="MOSI"/>
 <connect gate="G$1" pin="N/C-P10" pad="NC-P10"/>
 <connect gate="G$1" pin="N/C-P11" pad="NC-P11"/>
 <connect gate="G$1" pin="N/C-P12" pad="NC-P12"/>
-<connect gate="G$1" pin="N/C-P9" pad="NC-P9"/>
-<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="PROG1" pad="PROG1"/>
+<connect gate="G$1" pin="PROG2" pad="PROG2"/>
+<connect gate="G$1" pin="PROG3" pad="PROG3"/>
+<connect gate="G$1" pin="PROG4" pad="PROG4"/>
 <connect gate="G$1" pin="SCL" pad="SCL"/>
 <connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VBATT" pad="+5V"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -329,18 +331,18 @@ N/C pads are reserved for future use. Leave them floating in your MiniBadge if y
 <device name="EXAMPLE" package="BADGE64-MINIBADGE">
 <connects>
 <connect gate="G$1" pin="+3V3" pad="+3V3-P7 +3V3-P15"/>
-<connect gate="G$1" pin="+5V" pad="+5V"/>
-<connect gate="G$1" pin="CS" pad="CS"/>
+<connect gate="G$1" pin="CLK" pad="CLK"/>
 <connect gate="G$1" pin="GND" pad="GND-P2 GND-P8 GND-P16"/>
-<connect gate="G$1" pin="MISO" pad="MISO"/>
-<connect gate="G$1" pin="MOSI" pad="MOSI"/>
 <connect gate="G$1" pin="N/C-P10" pad="NC-P10"/>
 <connect gate="G$1" pin="N/C-P11" pad="NC-P11"/>
 <connect gate="G$1" pin="N/C-P12" pad="NC-P12"/>
-<connect gate="G$1" pin="N/C-P9" pad="NC-P9"/>
-<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="PROG1" pad="PROG1"/>
+<connect gate="G$1" pin="PROG2" pad="PROG2"/>
+<connect gate="G$1" pin="PROG3" pad="PROG3"/>
+<connect gate="G$1" pin="PROG4" pad="PROG4"/>
 <connect gate="G$1" pin="SCL" pad="SCL"/>
 <connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VBATT" pad="+5V"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -349,18 +351,18 @@ N/C pads are reserved for future use. Leave them floating in your MiniBadge if y
 <device name="FOOTPRINT-SHINY" package="BADGE64-FOOTPRINT-SHINY">
 <connects>
 <connect gate="G$1" pin="+3V3" pad="+3V3-P7 +3V3-P15"/>
-<connect gate="G$1" pin="+5V" pad="+5V"/>
-<connect gate="G$1" pin="CS" pad="CS"/>
+<connect gate="G$1" pin="CLK" pad="CLK"/>
 <connect gate="G$1" pin="GND" pad="GND-P2 GND-P8 GND-P16"/>
-<connect gate="G$1" pin="MISO" pad="MISO"/>
-<connect gate="G$1" pin="MOSI" pad="MOSI"/>
 <connect gate="G$1" pin="N/C-P10" pad="NC-P10"/>
 <connect gate="G$1" pin="N/C-P11" pad="NC-P11"/>
 <connect gate="G$1" pin="N/C-P12" pad="NC-P12"/>
-<connect gate="G$1" pin="N/C-P9" pad="NC-P9"/>
-<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="PROG1" pad="PROG1"/>
+<connect gate="G$1" pin="PROG2" pad="PROG2"/>
+<connect gate="G$1" pin="PROG3" pad="PROG3"/>
+<connect gate="G$1" pin="PROG4" pad="PROG4"/>
 <connect gate="G$1" pin="SCL" pad="SCL"/>
 <connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VBATT" pad="+5V"/>
 </connects>
 <technologies>
 <technology name=""/>
