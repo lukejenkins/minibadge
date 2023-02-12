@@ -7,6 +7,7 @@
 * @hamster
 * @compukidmike
 * @sodium-hydrogen
+* @jup1t3r
 
 ### Version 2.0  
 
@@ -134,7 +135,7 @@ and any unverified hardware addresses will be treated like a minibadge which cou
 
 #### Copyright & License
 
-Copyright, 2017-2021, Luke Jenkins
+Copyright, 2017-2023, Luke Jenkins
 
 Licensed under the [Apache License, Version 2.0](./LICENSE) (the "License");
 you may not use this file except in compliance with the License.
